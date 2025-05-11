@@ -2,9 +2,11 @@ import "~/styles/globals.css";
 
 import { type Metadata } from "next";
 import { Geist } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 
 import { TRPCReactProvider } from "~/trpc/react";
+import { Navigation } from "./_components/Navigation";
+import { Footer } from "./_components/Footer";
 
 export const metadata: Metadata = {
   title: "Create T3 App",
@@ -23,8 +25,14 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geist.variable}`}>
       <Analytics />
-      <body>
-        <TRPCReactProvider>{children}</TRPCReactProvider>
+      <body className="flex h-screen flex-col justify-between bg-gradient-to-b from-[#14181C] to-black p-5 text-white">
+        <header>
+          <Navigation />
+        </header>
+
+        <main className="mb-auto">{children}</main>
+
+        <Footer />
       </body>
     </html>
   );
