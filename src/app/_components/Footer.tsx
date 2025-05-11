@@ -3,7 +3,7 @@ import { Icon } from "@iconify/react";
 export function Footer() {
   return (
     <footer className="flex flex-col items-center justify-between px-6 py-4 md:flex-row">
-      <div className="mb-2 flex justify-center md:mb-0">
+      <div className="mb-2 flex justify-center whitespace-nowrap md:mb-0">
         &copy; {new Date().getFullYear()} Giovanni Medrano. All rights reserved.
       </div>
       <div className="flex justify-center gap-4">
