@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import { Icon } from "@iconify/react";
 export default async function Home() {
   return (
     <>
@@ -11,7 +11,7 @@ export default async function Home() {
             style={{ top: "10%", left: "10%", width: "150px", height: "150px" }}
           ></div>
           <div
-            className="absolute animate-pulse rounded-full bg-purple-500 opacity-30 blur-2xl delay-1000"
+            className="absolute animate-pulse rounded-full bg-blue-700 opacity-30 blur-2xl delay-1000"
             style={{
               top: "70%",
               right: "20%",
@@ -20,7 +20,7 @@ export default async function Home() {
             }}
           ></div>
           <div
-            className="absolute animate-pulse rounded-full bg-indigo-600 opacity-25 blur-xl delay-500"
+            className="absolute animate-pulse rounded-full bg-blue-600 opacity-25 blur-xl delay-500"
             style={{
               bottom: "5%",
               left: "40%",
@@ -34,19 +34,18 @@ export default async function Home() {
         <div className="animate-fade-in relative z-10 max-w-2xl space-y-6 text-center text-white md:text-left">
           <h1 className="text-5xl leading-tight font-extrabold drop-shadow-md md:text-6xl">
             {/* Hello, I&apos;m */}
-            <span className="bg-gradient-to-r from-blue-600 to-purple-700 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-300 to-blue-700 bg-clip-text text-transparent">
               Giovanni Medrano
             </span>
             <span
               className="ml-2 animate-bounce text-xl font-semibold text-gray-400"
               aria-label="waving hand"
             >
-              👋
+              ✈️
             </span>
           </h1>
           <p className="text-xl font-semibold tracking-wide text-gray-300">
-            <span className="text-indigo-400">Full Stack</span> Website
-            Developer
+            <span className="text-blue-700">Full Stack</span> Website Developer
           </p>
           <p className="text-lg leading-relaxed text-gray-400">
             Crafting engaging and performant web experiences is my passion. I
@@ -56,22 +55,9 @@ export default async function Home() {
           <div className="mt-6">
             <a
               href="#work"
-              className="inline-block transform rounded-full bg-indigo-600 px-8 py-4 text-lg font-semibold text-white shadow-lg transition duration-300 ease-in-out hover:scale-105 hover:bg-indigo-700"
+              className="inline-flex transform items-center gap-2 rounded-2xl bg-blue-700 px-8 py-4 text-lg font-semibold text-white shadow-lg transition duration-300 ease-in-out hover:scale-105 hover:bg-indigo-700"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="mr-2 -ml-1 inline-block h-6 w-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M2.25 12l8.954-8.955c.05-.052.2-.052.25-.001l8.955 8.955m-17.488 0h17.49m-17.488 0a5.25 5.25 0 00-5.25-5.25H4.5a5.25 5.25 0 00-5.25 5.25m17.488 0a5.25 5.25 0 015.25-5.25H19.5a5.25 5.25 0 015.25 5.25m-17.488 0v8.955a5.25 5.25 0 005.25 5.25H19.5a5.25 0 005.25-5.25V12"
-                />
-              </svg>
+              <Icon icon="mdi:work" />
               View My Work
             </a>
           </div>
@@ -80,7 +66,7 @@ export default async function Home() {
         {/* Profile Image */}
         <div className="group relative z-10 flex-shrink-0">
           <div
-            className="animate-gradient absolute -inset-1 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-75 blur-lg"
+            className="animate-gradient absolute -inset-1 rounded-full bg-gradient-to-r from-blue-500 via-yellow-500 to-red-800 opacity-75 blur-lg"
             style={{
               zIndex: -1,
               backgroundSize: "200% 200%",
