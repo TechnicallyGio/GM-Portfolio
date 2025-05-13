@@ -23,11 +23,11 @@ export function Navigation() {
     <nav
       className={`fixed z-50 flex h-16 items-center justify-between px-5 transition-all duration-300 ${
         scrolled
-          ? "bg-base-100 top-0 right-0 left-0 mx-auto w-full shadow-lg" // Full width and centered (though full width overrides centering)
-          : "bg-base-100 top-5 right-0 left-0 mx-auto w-4/5 rounded-2xl shadow-none" // Two-thirds width and centered initially
-      } `}
+          ? "bg-base-100 top-0 mx-auto w-full shadow-lg" // Desktop
+          : "bg-base-100 top-5 right-5 left-5 w-auto rounded-2xl shadow-none md:w-4/5" // Mobile
+      }`}
     >
-      <div className="navbar-start">
+      <div className="navbar-start flex w-full items-center md:w-auto md:justify-start">
         <div className="dropdown mr-5 lg:mr-0">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
@@ -63,7 +63,9 @@ export function Navigation() {
             </li>
           </ul>
         </div>
-        <span className="text-xl font-bold">MEDRANO</span>
+        <div className="flex-grow text-center md:text-left">
+          <span className="text-xl font-bold">MEDRANO</span>
+        </div>
       </div>
 
       <div className="navbar-end hidden lg:flex">
