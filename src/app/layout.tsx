@@ -25,12 +25,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geist.variable}`}>
       <Analytics />
-      <body className="flex h-screen w-full flex-col justify-between bg-gradient-to-b from-[#14181C] to-black p-5 text-white">
-        <header>
-          <Navigation />
-        </header>
+      <body className="flex min-h-screen flex-col bg-gradient-to-b from-[#14181C] to-black text-white">
+        <Navigation />
 
-        <main className="mb-auto">{children}</main>
+        <main className="flex-grow">{children}</main>
 
         <Footer />
       </body>

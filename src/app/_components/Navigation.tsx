@@ -1,91 +1,85 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export function Navigation() {
+  const [scrolled, setScrolled] = useState(false);
+  const handleScroll = () => {
+    if (window.scrollY > 0) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <nav>
-      <div className="navbar bg-base-100 rounded-2xl shadow-lg">
-        <div className="navbar-start">
-          <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                {" "}
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />{" "}
-              </svg>
-            </div>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+    <nav
+      className={`navbar fixed top-0 z-50 flex h-16 w-full items-center justify-between px-5 transition-all duration-300 ${
+        scrolled ? "bg-base-100 shadow-lg" : "bg-transparent shadow-none"
+      }`}
+    >
+      <div className="navbar-start">
+        <div className="dropdown mr-5 lg:mr-0">
+          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              <li>
-                <a>Home</a>
-              </li>
-              <li>
-                <a>Work</a>
-              </li>
-              <li>
-                <a>About</a>
-              </li>
-              <li>
-                <a>Contact</a>
-              </li>
-            </ul>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
           </div>
-          <a className="btn btn-ghost text-xl">MEDRANO</a>
-        </div>
-        <div className="navbar-end hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
+          <ul
+            tabIndex={0}
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 font-bold uppercase shadow"
+          >
             <li>
-              <a>Home</a>
+              <Link href="/">Home</Link>
             </li>
             <li>
-              <a>Work</a>
+              <Link href="/work">Work</Link>
             </li>
             <li>
-              <a>About</a>
+              <Link href="/about">About</Link>
             </li>
             <li>
-              <a>Contact</a>
+              <Link href="/contact">Contact</Link>
             </li>
           </ul>
         </div>
+        <span className="text-xl font-bold">MEDRANO</span>
+      </div>
+
+      <div className="navbar-end hidden lg:flex">
+        <ul className="menu menu-horizontal gap-1 px-1 font-bold uppercase">
+          <li>
+            <Link href="/">Home</Link>
+          </li>
+          <li>
+            <Link href="/work">Work</Link>
+          </li>
+          <li>
+            <Link href="/about">About</Link>
+          </li>
+          <li>
+            <Link href="/contact">Contact</Link>
+          </li>
+        </ul>
       </div>
     </nav>
   );
 }
-
-/*
-<nav>
-  <div className="navbar bg-base-100 rounded-2xl shadow-lg">
-    <div className="flex-1">
-      <a className="btn btn-ghost text-xl">MEDRANO</a>
-    </div>
-    <div className="flex-none">
-      <ul className="menu menu-horizontal px-1 font-black uppercase">
-        <li>
-          <a>Home</a>
-        </li>
-        <li>
-          <a>Work</a>
-        </li>
-        <li>
-          <a>About</a>
-        </li>
-        <li>
-          <a>Contact</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>;
-*/
