@@ -51,7 +51,7 @@ export default async function Home() {
           <p className="text-lg leading-relaxed text-gray-400">
             Crafting engaging and performant web experiences is my passion. I
             enjoy tackling complex challenges with clean code and intuitive
-            design. Let's build something amazing together.
+            design. Let&apos;s build something amazing together.
           </p>
           <div className="mt-6">
             <a
