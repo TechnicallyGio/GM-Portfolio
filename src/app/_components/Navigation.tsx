@@ -23,8 +23,8 @@ export function Navigation() {
     <nav
       className={`fixed z-50 flex h-16 items-center justify-between px-5 transition-all duration-300 ${
         scrolled
-          ? "bg-base-100 top-0 mx-auto w-full shadow-lg" // Desktop
-          : "bg-base-100 top-5 right-5 left-5 w-auto rounded-2xl shadow-none md:w-4/5" // Mobile
+          ? "bg-base-100 top-0 right-0 left-0 mx-auto w-full shadow-lg md:right-auto md:left-auto md:w-4/5" // Desktop: centered 80% width when scrolled
+          : "bg-base-100 top-5 right-5 left-5 mx-auto w-auto rounded-2xl shadow-none md:w-4/5" // Mobile
       }`}
     >
       <div className="navbar-start flex w-full items-center md:w-auto md:justify-start">
