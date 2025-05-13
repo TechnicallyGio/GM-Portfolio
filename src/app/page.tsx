@@ -6,7 +6,7 @@ export default async function Home() {
       {/* Text Content */}
       <div className="animate-fade-in max-w-2xl space-y-4 text-center md:text-left">
         <h1 className="text-4xl leading-tight font-extrabold text-gray-800 drop-shadow-md md:text-5xl">
-          Hello, I&apos;m{" "}
+          {/*  Hello, I&apos;m */}
           <span className="bg-gradient-to-r from-blue-500 to-red-700 bg-clip-text text-transparent">
             Giovanni Medrano
           </span>
