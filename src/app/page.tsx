@@ -3,7 +3,7 @@ import Image from "next/image";
 export default async function Home() {
   return (
     <>
-      <header className="relative flex min-h-screen flex-col-reverse items-center justify-center gap-12 overflow-hidden bg-black px-6 py-16 md:flex-row md:px-20 lg:px-32 xl:px-48">
+      <header className="relative flex min-h-screen flex-col-reverse items-center justify-center gap-12 overflow-hidden px-6 py-16 md:flex-row md:px-20 lg:px-32 xl:px-48">
         {/* Animated Background Circles */}
         <div className="absolute inset-0 -z-10 overflow-hidden">
           <div
@@ -89,7 +89,7 @@ export default async function Home() {
           ></div>
           <div className="animate-fade-in-up relative h-48 w-48 overflow-hidden rounded-full border-4 border-gray-800 shadow-xl transition duration-300 ease-in-out group-hover:scale-105 md:h-72 md:w-72">
             <Image
-              src="https://placehold.co/1000x1000?text=Hello+World"
+              src="/images/profile_pic.png"
               alt="Giovanni Medrano"
               width={1000}
               height={1000}
