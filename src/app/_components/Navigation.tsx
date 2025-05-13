@@ -21,9 +21,11 @@ export function Navigation() {
 
   return (
     <nav
-      className={`navbar fixed top-0 z-50 flex h-16 w-full items-center justify-between px-5 transition-all duration-300 ${
-        scrolled ? "bg-base-100 shadow-lg" : "bg-transparent shadow-none"
-      }`}
+      className={`fixed z-50 flex h-16 items-center justify-between px-5 transition-all duration-300 ${
+        scrolled
+          ? "bg-base-100 top-0 right-0 left-0 mx-auto w-full shadow-lg" // Full width and centered (though full width overrides centering)
+          : "bg-base-100 top-5 right-0 left-0 mx-auto w-4/5 rounded-2xl shadow-none" // Two-thirds width and centered initially
+      } `}
     >
       <div className="navbar-start">
         <div className="dropdown mr-5 lg:mr-0">
