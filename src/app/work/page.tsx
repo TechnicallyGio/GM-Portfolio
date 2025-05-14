@@ -4,94 +4,6 @@ import { useState } from "react";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 
-const techStack = [
-  {
-    name: "HTML",
-    icon: "logos:html-5",
-  },
-  {
-    name: "CSS",
-    icon: "logos:css-3",
-  },
-  {
-    name: "Tailwind CSS",
-    icon: "logos:tailwindcss-icon",
-  },
-  {
-    name: "Bootstrap",
-    icon: "logos:bootstrap",
-  },
-  {
-    name: "Sass",
-    icon: "logos:sass",
-  },
-  {
-    name: "Figma",
-    icon: "logos:figma",
-  },
-  {
-    name: "Photoshop",
-    icon: "logos:adobe-photoshop",
-  },
-  {
-    name: "Illustrator",
-    icon: "logos:adobe-illustrator",
-  },
-
-  {
-    name: "PHP",
-    icon: "logos:php",
-  },
-  {
-    name: "JavaScript",
-    icon: "logos:javascript",
-  },
-  {
-    name: "Python",
-    icon: "logos:python",
-  },
-  {
-    name: "React",
-    icon: "logos:react",
-  },
-  {
-    name: "Vue.js",
-    icon: "logos:vue",
-  },
-  {
-    name: "Laravel",
-    icon: "logos:laravel",
-  },
-  {
-    name: "Next.js",
-    icon: "logos:nextjs-icon",
-  },
-  {
-    name: "Django",
-    icon: "logos:django-icon",
-  },
-  {
-    name: "TypeScript",
-    icon: "logos:typescript-icon",
-  },
-  {
-    name: "MongoDB",
-    icon: "logos:mongodb-icon",
-  },
-  {
-    name: "MySQL",
-    icon: "logos:mysql-icon",
-  },
-  {
-    name: "AWS",
-    icon: "logos:aws",
-  },
-  {
-    name: "Google Cloud Platform",
-    icon: "logos:google-cloud",
-  },
-];
-
 const filters = ["All", "Frontend", "Full Stack", "Design", "Branding"];
 
 const projects = [
@@ -130,6 +42,12 @@ const projects = [
     title: "AMILAGROS CO'",
     image: "/images/projects/amg.png",
     tags: ["Branding", "Packaging / Labeling"],
+  },
+  {
+    id: 6,
+    title: "VATSCAN",
+    image: "/images/projects/amg.png",
+    tags: ["Design", "Mobile App", "React"],
   },
 ];
 
