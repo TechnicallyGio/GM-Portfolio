@@ -40,7 +40,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${geist.variable}`}>
-      <body className="flex min-h-screen flex-col bg-gradient-to-b from-[#14181C] to-black text-white">
+      <body className="flex min-h-screen flex-col bg-gradient-to-br from-slate-900 via-blue-950 to-black text-white">
         <Navigation />
 
         <main className="flex-grow">{children}</main>

@@ -3,7 +3,7 @@ import { Icon } from "@iconify/react";
 export default async function Home() {
   return (
     <>
-      <header className="relative flex min-h-screen flex-col-reverse items-center justify-center gap-12 overflow-hidden px-6 py-16 md:flex-row md:px-20 lg:px-32 xl:px-48">
+      <header className="relative top-0 flex min-h-screen flex-col-reverse items-center justify-center gap-12 overflow-hidden px-6 py-16 md:flex-row md:px-20 lg:px-32 xl:px-48">
         {/* Animated Background Circles */}
         <div className="absolute inset-0 -z-10 overflow-hidden">
           <div
@@ -84,105 +84,6 @@ export default async function Home() {
           </div>
         </div>
       </header>
-      <section
-        id="technologies"
-        className="snap-start snap-always bg-black py-16"
-      >
-        <div className="container mx-auto px-6">
-          <h2 className="mb-8 text-center text-3xl font-bold text-white md:text-4xl">
-            Technologies I Work With
-          </h2>
-          <p className="mb-12 text-center text-lg text-gray-400">
-            A selection of the technologies that power my projects.
-          </p>
-
-          {/* Technologies Carousel */}
-          <div className="snap-x overflow-x-auto scroll-smooth">
-            <div className="flex w-max gap-8 px-4 md:px-0">
-              {/* Technology Item - React */}
-              <div className="flex h-48 w-64 snap-center items-center justify-center rounded-lg bg-gray-800 p-6 shadow-md">
-                <span className="text-3xl font-bold text-indigo-400">
-                  React
-                </span>
-              </div>
-
-              {/* Technology Item - Laravel */}
-              <div className="flex h-48 w-64 snap-center items-center justify-center rounded-lg bg-gray-800 p-6 shadow-md">
-                <span className="text-3xl font-bold text-red-500">Laravel</span>
-              </div>
-
-              {/* Technology Item - Next.js */}
-              <div className="flex h-48 w-64 snap-center items-center justify-center rounded-lg bg-gray-800 p-6 shadow-md">
-                <span className="text-3xl font-bold text-blue-500">
-                  Next.js
-                </span>
-              </div>
-
-              {/* Technology Item - PHP */}
-              <div className="flex h-48 w-64 snap-center items-center justify-center rounded-lg bg-gray-800 p-6 shadow-md">
-                <span className="text-3xl font-bold text-purple-500">PHP</span>
-              </div>
-
-              {/* Technology Item - JavaScript */}
-              <div className="flex h-48 w-64 snap-center items-center justify-center rounded-lg bg-gray-800 p-6 shadow-md">
-                <span className="text-3xl font-bold text-yellow-400">
-                  JavaScript
-                </span>
-              </div>
-
-              {/* Technology Item - HTML */}
-              <div className="flex h-48 w-64 snap-center items-center justify-center rounded-lg bg-gray-800 p-6 shadow-md">
-                <span className="text-3xl font-bold text-orange-500">HTML</span>
-              </div>
-
-              {/* Technology Item - Python */}
-              <div className="flex h-48 w-64 snap-center items-center justify-center rounded-lg bg-gray-800 p-6 shadow-md">
-                <span className="text-3xl font-bold text-green-500">
-                  Python
-                </span>
-              </div>
-
-              {/* Technology Item - TypeScript */}
-              <div className="flex h-48 w-64 snap-center items-center justify-center rounded-lg bg-gray-800 p-6 shadow-md">
-                <span className="text-3xl font-bold text-blue-300">
-                  TypeScript
-                </span>
-              </div>
-
-              {/* Technology Item - MongoDB */}
-              <div className="flex h-48 w-64 snap-center items-center justify-center rounded-lg bg-gray-800 p-6 shadow-md">
-                <span className="text-xl font-bold text-green-600">
-                  MongoDB
-                </span>
-              </div>
-
-              {/* Technology Item - MySQL */}
-              <div className="flex h-48 w-64 snap-center items-center justify-center rounded-lg bg-gray-800 p-6 shadow-md">
-                <span className="text-xl font-bold text-blue-600">MySQL</span>
-              </div>
-
-              {/* Technology Item - Digital Ocean */}
-              <div className="flex h-48 w-64 snap-center items-center justify-center rounded-lg bg-gray-800 p-6 shadow-md">
-                <span className="text-center text-sm font-bold text-blue-400">
-                  Digital Ocean
-                </span>
-              </div>
-
-              {/* Technology Item - AWS */}
-              <div className="flex h-48 w-64 snap-center items-center justify-center rounded-lg bg-gray-800 p-6 shadow-md">
-                <span className="text-xl font-bold text-orange-400">AWS</span>
-              </div>
-
-              {/* Technology Item - Google Cloud */}
-              <div className="flex h-48 w-64 snap-center items-center justify-center rounded-lg bg-gray-800 p-6 shadow-md">
-                <span className="text-center text-sm font-bold text-blue-600">
-                  Google Cloud
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   );
 }

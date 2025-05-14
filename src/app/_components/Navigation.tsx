@@ -64,7 +64,7 @@ export function Navigation() {
           </ul>
         </div>
         <div className="flex-grow md:text-left">
-          <span className="text-xl font-bold">MEDRANO</span>
+          <span className="font-bol text-xl">MEDRANO</span>
         </div>
       </div>
 
