@@ -4,9 +4,10 @@ import { type Metadata } from "next";
 import { Geist } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 
-import { TRPCReactProvider } from "~/trpc/react";
-import { Navigation } from "./_components/Navigation";
 import { Footer } from "./_components/Footer";
+import { TRPCReactProvider } from "~/trpc/react";
+import { HydrateClient } from "~/trpc/server";
+import Navigation from "./_components/Navigation";
 
 export const metadata: Metadata = {
   title: "Giovanni Medrano | Portfolio",
@@ -38,12 +39,23 @@ const geist = Geist({
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  const headerLinks = [
+    { name: "Home", url: "/" },
+    { name: "Work", url: "/work" },
+    { name: "About", url: "/about" },
+    { name: "Contact", url: "/contact" },
+  ];
+
   return (
     <html lang="en" className={`${geist.variable}`}>
       <body className="flex min-h-screen flex-col bg-gradient-to-br from-slate-900 via-blue-950 to-black text-white">
-        <Navigation />
+        <Navigation links={headerLinks} />
 
-        <main className="flex-grow">{children}</main>
+        <TRPCReactProvider>
+          <HydrateClient>
+            <main className="flex-grow">{children}</main>
+          </HydrateClient>
+        </TRPCReactProvider>
 
         <Footer />
         <Analytics />

@@ -2,28 +2,58 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
-export function Navigation() {
+interface NavigationProps {
+  links: Array<{
+    name: string;
+    url: string;
+    children?: Array<{
+      name: string;
+      url: string;
+    }>;
+  }>;
+}
+
+export default function Navigation({ links }: NavigationProps) {
   const [scrolled, setScrolled] = useState(false);
-  const handleScroll = () => {
+
+  useEffect(() => {
     if (window.scrollY > 0) {
       setScrolled(true);
-    } else {
-      setScrolled(false);
     }
-  };
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
+
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0);
     };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <nav
-      className={`fixed z-50 flex h-16 items-center justify-between px-5 shadow-xl backdrop-blur-3xl transition-all duration-200 ease-in-out ${
+    <motion.nav
+      initial={{ opacity: 0, top: -50, left: "5%", right: "5%", width: "90%" }}
+      animate={{
+        opacity: 1,
+        y: 0,
+        top: scrolled ? 0 : 20,
+        left: scrolled ? 0 : "5%",
+        right: scrolled ? 0 : "5%",
+        width: scrolled ? "100%" : "90%",
+        borderRadius: scrolled ? "0rem" : "1rem",
+
+        boxShadow: scrolled
+          ? "0 4px 20px rgba(0, 0, 0, 0.2)"
+          : "0 0px 0px rgba(0, 0, 0, 0)",
+      }}
+      transition={{
+        duration: 0.5, // Smooth transition for high refresh displays
+        ease: [0.4, 0, 0.2, 1], // Equivalent to CSS ease-in-out
+      }}
+      className={`fixed z-50 flex h-16 items-center justify-between px-5 ${
         scrolled
-          ? "bg-base-300 top-0 w-full rounded-none shadow-md"
+          ? "bg-base-300 top-0 w-full rounded-none shadow-2xl backdrop-blur-3xl"
           : "bg-base-300 top-5 right-5 left-5 mx-auto w-auto rounded-2xl shadow-none md:w-4/5"
       }`}
     >
@@ -49,43 +79,69 @@ export function Navigation() {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 font-bold uppercase shadow"
           >
-            <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="/work">Work</Link>
-            </li>
-            <li>
-              <Link href="/about">About</Link>
-            </li>
-            <li>
-              <Link href="/contact">Contact</Link>
-            </li>
+            {links.map((link) =>
+              link.children ? (
+                <li key={link.name}>
+                  <details>
+                    <summary>{link.name}</summary>
+                    <ul className="p-2">
+                      {link.children.map((child) => (
+                        <li key={child.name}>
+                          <Link href={child.url}>{child.name}</Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </details>
+                </li>
+              ) : (
+                <li key={link.name}>
+                  <Link href={link.url}>{link.name}</Link>
+                </li>
+              ),
+            )}
           </ul>
         </div>
-        <div className="flex-grow md:text-left">
-          <span className="text-lg font-bold text-white md:text-3xl">
+        <motion.div
+          initial={{ scale: 0.95 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.3 }}
+          className="md:*text-left flex-grow"
+        >
+          <Link href="/" className="text-xl font-bold text-white md:text-3xl">
             MEDRANO
-          </span>
-        </div>
+          </Link>
+        </motion.div>
       </div>
 
       <div className="navbar-end hidden lg:flex">
-        <ul className="menu menu-horizontal gap-1 px-1 font-bold uppercase">
-          <li>
-            <Link href="/">Home</Link>
-          </li>
-          <li>
-            <Link href="/work">Work</Link>
-          </li>
-          <li>
-            <Link href="/about">About</Link>
-          </li>
-          <li>
-            <Link href="/contact">Contact</Link>
-          </li>
-        </ul>
+        <motion.ul
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className="menu menu-horizontal hidden gap-4 px-1 text-white uppercase lg:flex"
+        >
+          {links.map((link) =>
+            link.children ? (
+              <li key={link.name}>
+                <details>
+                  <summary>{link.name}</summary>
+                  <ul className="p-2">
+                    {link.children.map((child) => (
+                      <li key={child.name}>
+                        <Link href={child.url}>{child.name}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              </li>
+            ) : (
+              <li key={link.name}>
+                <Link href={link.url}>{link.name}</Link>
+              </li>
+            ),
+          )}
+        </motion.ul>
       </div>
-    </nav>
+    </motion.nav>
   );
 }
