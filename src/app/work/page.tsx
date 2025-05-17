@@ -3,53 +3,9 @@
 import { useState } from "react";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
+import projects from "../projects";
 
 const filters = ["All", "Frontend", "Full Stack", "Design", "Branding"];
-
-const projects = [
-  {
-    id: 1,
-    title: "Flight Logger",
-    image: "/images/projects/flight-logger.png",
-    tags: ["Design", "Frontend", "React", "Figma"],
-  },
-  {
-    id: 2,
-    title: "ShortFinal",
-    image: "/images/projects/short-final.png",
-    tags: ["Full Stack", "Laravel", "React", "Branding"],
-  },
-  {
-    id: 3,
-    title: "Garnica Cleaning",
-    image: "/images/projects/garnica.png",
-    tags: ["Frontend"],
-  },
-  {
-    id: 4,
-    title: "Swim School Marketing Collateral",
-    image: "/images/projects/referral.png",
-    tags: ["Design", "Illustrator"],
-  },
-  {
-    id: 5,
-    title: "AORUX",
-    image: "/images/projects/ax.png",
-    tags: ["Branding", "Full Stack"],
-  },
-  {
-    id: 6,
-    title: "AMILAGROS CO'",
-    image: "/images/projects/amg.png",
-    tags: ["Branding", "Packaging / Labeling"],
-  },
-  {
-    id: 6,
-    title: "VATSCAN",
-    image: "/images/projects/amg.png",
-    tags: ["Design", "Mobile App", "React"],
-  },
-];
 
 export default function Work() {
   const [selectedFilter, setSelectedFilter] = useState("All");
