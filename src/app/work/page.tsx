@@ -57,14 +57,14 @@ export default function Work() {
             >
               <Image
                 src={project.image}
-                alt={project.title}
+                alt={project.name}
                 width={600}
                 height={400}
                 className="h-48 w-full object-cover grayscale filter transition-all duration-500 ease-in-out hover:grayscale-0"
               />
               <div className="p-4">
                 <h3 className="text-lg font-semibold text-white">
-                  {project.title}
+                  {project.name}
                 </h3>
                 <div className="mt-2 flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
