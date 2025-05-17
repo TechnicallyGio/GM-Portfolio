@@ -53,7 +53,7 @@ export default function RootLayout({
 
         <TRPCReactProvider>
           <HydrateClient>
-            <main className="flex-grow">{children}</main>
+            <main className="flex-grow pt-24">{children}</main>
           </HydrateClient>
         </TRPCReactProvider>
 

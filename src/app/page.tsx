@@ -1,47 +1,84 @@
+"use client";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
-export default async function Home() {
+import Link from "next/link";
+import { motion } from "framer-motion";
+import projects from "./projects";
+
+export default function Home() {
+  const featuredProject = projects.filter((project) => project.featured);
+
   return (
     <>
-      <header className="relative top-0 flex min-h-screen flex-col-reverse items-center justify-center gap-12 overflow-hidden px-6 py-16 md:flex-row md:px-20 lg:px-32 xl:px-48">
+      <header className="relative isolate flex flex-col-reverse items-center justify-center gap-12 px-6 py-16 md:flex-row md:px-20 lg:px-32 xl:px-48">
         {/* Animated Background Circles */}
         <div className="absolute inset-0 -z-10 overflow-hidden">
-          <div
-            className="absolute animate-pulse rounded-full bg-blue-400 opacity-20 blur-xl"
+          <motion.div
+            className="absolute rounded-full bg-blue-400 opacity-20 blur-xl"
             style={{ top: "10%", left: "10%", width: "150px", height: "150px" }}
-          ></div>
-          <div
-            className="absolute animate-pulse rounded-full bg-blue-700 opacity-30 blur-2xl delay-1000"
+            animate={{ scale: [1, 1.1, 1] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+          />
+          <motion.div
+            className="absolute rounded-full bg-blue-700 opacity-30 blur-2xl"
             style={{
               top: "70%",
               right: "20%",
               width: "200px",
               height: "200px",
             }}
-          ></div>
-          <div
-            className="absolute animate-pulse rounded-full bg-blue-600 opacity-25 blur-xl delay-500"
+            animate={{ scale: [1, 1.15, 1] }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 1,
+            }}
+          />
+          <motion.div
+            className="absolute rounded-full bg-slate-700 opacity-30 blur-2xl"
+            style={{
+              top: "10%",
+              right: "20%",
+              width: "100px",
+              height: "100px",
+            }}
+            animate={{ scale: [1, 1.2, 1] }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 1,
+            }}
+          />
+          <motion.div
+            className="absolute rounded-full bg-blue-600 opacity-25 blur-xl"
             style={{
               bottom: "5%",
               left: "40%",
               width: "100px",
               height: "100px",
             }}
-          ></div>
+            animate={{ scale: [1, 1.1, 1] }}
+            transition={{
+              duration: 3.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 0.5,
+            }}
+          />
         </div>
 
         {/* Text Content */}
-        <div className="animate-fade-in relative z-10 max-w-2xl space-y-6 text-center text-white md:text-left">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="relative z-10 max-w-2xl space-y-6 text-center text-white md:text-left"
+        >
           <h1 className="text-5xl leading-tight font-extrabold drop-shadow-md md:text-6xl">
-            {/* Hello, I&apos;m */}
             <span className="bg-gradient-to-r from-blue-300 to-blue-700 bg-clip-text text-transparent">
               Giovanni Medrano
-            </span>
-            <span
-              className="ml-2 animate-bounce text-xl font-semibold text-gray-400"
-              aria-label="waving hand"
-            >
-              ✈️
             </span>
           </h1>
           <p className="text-xl font-semibold tracking-wide text-gray-300">
@@ -52,37 +89,82 @@ export default async function Home() {
             enjoy tackling complex challenges with clean code and intuitive
             design. Let&apos;s build something amazing together.
           </p>
-          <div className="mt-6">
-            <a
-              href="#work"
-              className="inline-flex transform items-center gap-2 rounded-2xl bg-blue-700 px-8 py-4 text-lg font-semibold text-white shadow-lg transition duration-300 ease-in-out hover:scale-105 hover:bg-indigo-700"
-            >
-              <Icon icon="mdi:work" />
-              View My Work
-            </a>
+
+          <div className="flex flex-col gap-4">
+            {featuredProject.length > 0 ? (
+              <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
+                {featuredProject.map((project, idx) => (
+                  <motion.div
+                    key={idx}
+                    className="bg-base-300 overflow-hidden rounded-lg transition-transform hover:scale-105"
+                    whileHover={{ scale: 1.05 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: idx * 0.1, duration: 0.5 }}
+                  >
+                    <Image
+                      src={project.image}
+                      alt={`${project.name} screenshot`}
+                      width={1000}
+                      height={1000}
+                      className="h-32 w-full object-cover"
+                    />
+                    <div className="p-3 text-center">
+                      <h3 className="text-lg font-bold text-white hover:text-blue-400">
+                        {project.name}
+                      </h3>
+                      <Link
+                        href={`/projects/${project.slug}`}
+                        className="mt-2 inline-block rounded bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
+                      >
+                        View Project
+                      </Link>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            ) : (
+              <p className="text-gray-400">
+                No featured projects at the moment.
+              </p>
+            )}
+
+            <div className="pt-2 text-center">
+              <Link
+                href="/projects"
+                className="btn btn-outline border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white"
+              >
+                View All Projects
+              </Link>
+            </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Profile Image */}
-        <div className="group relative z-10 flex-shrink-0">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="group relative z-10 flex-shrink-0"
+        >
           <div
-            className="animate-gradient absolute -inset-1 rounded-full bg-gradient-to-r from-blue-500 via-yellow-500 to-red-800 opacity-75 blur-lg"
+            className="absolute -inset-1 rounded-full bg-gradient-to-r from-blue-500 via-yellow-500 to-red-800 opacity-75 blur-lg"
             style={{
               zIndex: -1,
               backgroundSize: "200% 200%",
               animation: "gradient 5s ease-in-out infinite",
             }}
-          ></div>
-          <div className="animate-fade-in-up relative h-48 w-48 overflow-hidden rounded-full border-4 border-gray-800 shadow-xl transition duration-300 ease-in-out group-hover:scale-105 md:h-72 md:w-72">
+          />
+          <div className="relative h-48 w-48 overflow-hidden rounded-full border-4 border-gray-800 shadow-xl transition duration-300 ease-in-out group-hover:scale-105 md:h-72 md:w-72">
             <Image
               src="/images/profile_pic.png"
-              alt="Giovanni Medrano"
+              alt="Giovanni Medrano headshot"
               width={1000}
               height={1000}
               className="h-full w-full object-cover transition duration-300 ease-in-out group-hover:brightness-110"
             />
           </div>
-        </div>
+        </motion.div>
       </header>
     </>
   );
