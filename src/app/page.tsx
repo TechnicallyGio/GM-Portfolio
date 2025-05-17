@@ -131,7 +131,7 @@ export default function Home() {
 
             <div className="pt-2 text-center">
               <Link
-                href="/projects"
+                href="/work"
                 className="btn btn-outline border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white"
               >
                 View All Projects
