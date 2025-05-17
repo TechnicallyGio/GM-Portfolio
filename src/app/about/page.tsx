@@ -50,7 +50,7 @@ export default function About() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.1 }}
           >
-            Hi, I'm{" "}
+            Hi, I&apos;m{" "}
             <strong className="text-indigo-400">Giovanni Medrano</strong> — a
             self-taught website developer and graphic designer based in{" "}
             <strong>New York, USA</strong>.
@@ -71,8 +71,8 @@ export default function About() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
           >
-            I've worn many hats professionally — from aquatics and retail to
-            aviation and technology — giving me a well-rounded, adaptable
+            I&apos;ve worn many hats professionally — from aquatics and retail
+            to aviation and technology — giving me a well-rounded, adaptable
             approach to every project.
           </motion.p>
 
@@ -81,7 +81,7 @@ export default function About() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4 }}
           >
-            I'm especially passionate about{" "}
+            I&apos;m especially passionate about{" "}
             <strong className="text-indigo-300">aviation</strong>. The mix of
             structure and exploration inspires my work and mindset — always
             aiming high, but grounded in detail.
