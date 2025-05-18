@@ -17,7 +17,7 @@ export default function Work() {
         );
 
   return (
-    <section className="relative top-10 px-6 py-16 sm:px-12 lg:px-24">
+    <section className="relative">
       {/* Header */}
       <header className="mb-12 text-center">
         <h2 className="mb-3 text-4xl font-extrabold text-white">

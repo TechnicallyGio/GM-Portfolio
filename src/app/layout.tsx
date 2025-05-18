@@ -9,11 +9,13 @@ import { TRPCReactProvider } from "~/trpc/react";
 import { HydrateClient } from "~/trpc/server";
 import Navigation from "./_components/Navigation";
 
+import GalaxyWrapper from "./_components/GalaxyWrapper";
+
 export const metadata: Metadata = {
   title: "Giovanni Medrano | Portfolio",
   authors: [{ name: "Giovanni Medrano", url: "https://giovannimedrano.com" }],
   description:
-    "Giovanni Medrano is a software engineer and web developer from New York, United States. He specializes in building engaging websites that are fast, responsive, and user-friendly. He is passionate about creating beautiful and functional web applications that provide a great user experience.",
+    "Giovanni Medrano is a software engineer and web developer from Houston, Texas, United States. He specializes in building engaging websites that are fast, responsive, and user-friendly. He is passionate about creating beautiful and functional web applications that provide a great user experience.",
   keywords: [
     "Giovanni Medrano",
     "portfolio",
@@ -27,7 +29,6 @@ export const metadata: Metadata = {
     "Houston Texas, Full Stack Developer",
     "Houston Texas, SEO Specialist",
   ],
-
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
@@ -48,16 +49,19 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={`${geist.variable}`}>
-      <body className="flex min-h-screen flex-col bg-gradient-to-br from-slate-900 via-blue-950 to-black text-white">
+      <body className="relative flex min-h-screen flex-col text-white">
         <Navigation links={headerLinks} />
-
         <TRPCReactProvider>
           <HydrateClient>
-            <main className="flex-grow pt-24">{children}</main>
+            <main className="relative flex-grow">
+              <GalaxyWrapper />
+              <div className="relative z-10 px-6 py-25 md:p-10 lg:p-16 xl:p-20 2xl:p-24">
+                {children}
+              </div>
+            </main>
+            <Footer />
           </HydrateClient>
         </TRPCReactProvider>
-
-        <Footer />
         <Analytics />
       </body>
     </html>
