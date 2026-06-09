@@ -4,7 +4,6 @@
 import { Canvas } from "@react-three/fiber";
 import { Stars, OrbitControls } from "@react-three/drei";
 import { Suspense } from "react";
-import { motion } from "framer-motion";
 
 export default function GalaxyBackground() {
   return (
