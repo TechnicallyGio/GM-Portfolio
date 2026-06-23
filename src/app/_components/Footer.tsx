@@ -85,7 +85,7 @@ export function Footer() {
             </h4>
             <div className="space-y-3">
               <a
-                href="mailto:your.email@example.com"
+                href="mailto:contact@aorux.com"
                 className="flex items-center gap-2 text-sm text-gray-400 transition-colors duration-300 hover:text-blue-400"
               >
                 <Icon icon="mdi:email-outline" className="h-5 w-5" />

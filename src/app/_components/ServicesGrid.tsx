@@ -51,79 +51,75 @@ const services: Service[] = [
 
 export default function ServicesGrid() {
   return (
-    <section className="relative z-10 mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 sm:py-16 md:px-10 lg:px-16 lg:py-24">
+    <section className="mx-auto w-full max-w-6xl py-16 sm:py-20">
       {/* Section Header */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="mb-8 text-center sm:mb-12"
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="mb-10 text-center sm:mb-14"
       >
-        <h2 className="mb-3 text-3xl font-bold text-white sm:mb-4 sm:text-4xl lg:text-5xl">
-          Services & Solutions
+        <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+          Services &amp; Solutions
         </h2>
-        <p className="mx-auto max-w-2xl text-base text-gray-300 sm:text-lg md:text-xl">
+        <p className="mx-auto mt-3 max-w-2xl text-base text-zinc-400 sm:text-lg">
           Comprehensive expertise across development, design, and business
           strategy.
         </p>
       </motion.div>
 
-      {/* Services Grid - Mobile First */}
-      <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+      {/* Services Grid */}
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {services.map((service, index) => (
           <motion.div
             key={service.title}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1, duration: 0.5 }}
-            className="group relative overflow-hidden rounded-xl border border-white/10 bg-gradient-to-br from-white/5 to-white/0 p-6 backdrop-blur-xl transition-all duration-300 hover:border-blue-500/50 hover:from-white/10 hover:to-blue-500/5 sm:rounded-2xl sm:p-8"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.05, duration: 0.4 }}
+            className="group rounded-2xl border border-white/[0.08] bg-white/[0.02] p-6 transition-colors duration-200 hover:border-white/15 hover:bg-white/[0.04] sm:p-7"
           >
-            {/* Icon */}
-            <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500/20 transition-all duration-300 group-hover:scale-110 group-hover:bg-blue-500/30 sm:mb-4 sm:h-14 sm:w-14">
-              <Icon
-                icon={service.icon}
-                className="h-6 w-6 text-blue-400 sm:h-7 sm:w-7"
-              />
+            <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-blue-500/10 text-blue-400">
+              <Icon icon={service.icon} className="h-5 w-5" />
             </div>
 
-            {/* Title */}
-            <h3 className="mb-2 text-lg font-semibold text-white sm:mb-3 sm:text-xl md:text-2xl">
+            <h3 className="mb-2 text-lg font-medium text-white sm:text-xl">
               {service.title}
             </h3>
 
-            {/* Description */}
-            <p className="mb-3 text-sm leading-relaxed text-gray-300 sm:mb-4 sm:text-base">
+            <p className="mb-4 text-sm leading-relaxed text-zinc-400">
               {service.description}
             </p>
 
-            {/* Learn More Link */}
             <Link
               href="/services"
-              className="inline-flex items-center text-xs font-medium text-blue-400 transition-all duration-300 group-hover:translate-x-1 group-hover:text-blue-300 sm:text-sm"
+              className="inline-flex items-center gap-1 text-sm font-medium text-blue-400 transition-colors duration-200 hover:text-blue-300"
             >
-              Learn More
-              <Icon icon="mdi:arrow-right" className="ml-1 h-4 w-4" />
+              Learn more
+              <Icon
+                icon="mdi:arrow-right"
+                className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5"
+              />
             </Link>
-
-            {/* Hover Gradient Effect */}
-            <div className="absolute -top-8 -right-8 h-24 w-24 rounded-full bg-blue-500/10 blur-3xl transition-all duration-500 group-hover:scale-150 sm:h-32 sm:w-32" />
           </motion.div>
         ))}
       </div>
 
-      {/* CTA Button - Mobile First */}
+      {/* CTA Button */}
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.8, duration: 0.5 }}
-        className="mt-8 text-center sm:mt-12"
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.2, duration: 0.4 }}
+        className="mt-10 text-center sm:mt-12"
       >
         <Link
           href="/services"
-          className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-blue-500 px-6 py-3 text-base font-semibold text-white shadow-lg shadow-blue-500/30 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/40 sm:w-auto sm:px-8 sm:py-4 sm:text-lg"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-6 py-3 text-sm font-medium text-zinc-200 transition-colors duration-200 hover:bg-white/[0.06] sm:w-auto"
         >
           View All Services
-          <Icon icon="mdi:arrow-right" className="h-5 w-5" />
+          <Icon icon="mdi:arrow-right" className="h-4 w-4" />
         </Link>
       </motion.div>
     </section>

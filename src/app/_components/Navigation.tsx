@@ -161,14 +161,13 @@ export default function Navigation({ links }: NavigationProps) {
           >
             <Link
               href="/contact"
-              className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-blue-600 to-blue-500 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/30 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/40"
+              className="group inline-flex items-center gap-2 rounded-full bg-blue-500 px-5 py-2 text-sm font-medium text-white transition-colors duration-200 hover:bg-blue-400"
             >
-              <span className="relative z-10">Get Started</span>
+              <span>Get Started</span>
               <Icon
                 icon="mdi:arrow-right"
-                className="relative z-10 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5"
               />
-              <div className="absolute inset-0 -z-10 bg-gradient-to-r from-blue-500 to-blue-400 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             </Link>
           </motion.div>
         </div>
@@ -281,7 +280,7 @@ export default function Navigation({ links }: NavigationProps) {
                 >
                   <Link
                     href="/contact"
-                    className="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-blue-500 px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-blue-500/30 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/40"
+                    className="flex w-full items-center justify-center gap-2 rounded-full bg-blue-500 px-8 py-3.5 text-base font-medium text-white transition-colors duration-200 hover:bg-blue-400"
                   >
                     Get Started
                     <Icon icon="mdi:arrow-right" className="h-5 w-5" />
@@ -322,7 +321,7 @@ export default function Navigation({ links }: NavigationProps) {
                       />
                     </a>
                     <a
-                      href="mailto:your.email@example.com"
+                      href="mailto:contact@aorux.com"
                       className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/5 transition-all duration-300 hover:border-blue-500/50 hover:bg-blue-500/10"
                     >
                       <Icon

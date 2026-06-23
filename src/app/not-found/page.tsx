@@ -18,7 +18,7 @@ export default function NotFound() {
       </p>
       <Link
         href="/"
-        className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-blue-500 px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-blue-500/30 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/40"
+        className="inline-flex items-center gap-2 rounded-full bg-blue-500 px-7 py-3.5 text-base font-medium text-white transition-colors duration-200 hover:bg-blue-400"
       >
         <Icon icon="mdi:home" className="h-5 w-5" />
         Back to Home

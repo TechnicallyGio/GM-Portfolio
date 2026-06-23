@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "Giovanni Medrano | Professional Solutions Engineer & Freelance Developer",
   authors: [{ name: "Giovanni Medrano", url: "https://giovannimedrano.com" }],
   description:
-    "Professional solutions engineer by day, freelance developer by night. I deliver enterprise-grade e-commerce platforms, custom integrations (Stripe, Zoho), and business systems for established clients—plus selective startup MVPs and passion projects.",
+    "Giovanni Medrano is a professional Solutions Engineer and Freelance Developer specializing in enterprise development, e-commerce platforms, and custom CRM integrations. With expertise in UI/UX design, business consulting, and multi-channel sales implementation, Giovanni delivers innovative solutions for startups and established businesses alike.",
   keywords: [
     "Giovanni Medrano",
     "Solutions Engineer",
@@ -69,13 +69,13 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={`${geist.variable}`}>
-      <body className="relative flex min-h-screen flex-col text-white">
+      <body className="relative flex min-h-screen flex-col bg-[#09090b] text-white antialiased">
+        <GalaxyWrapper />
         <Navigation links={headerLinks} />
         <TRPCReactProvider>
           <HydrateClient>
-            <main className="relative flex-grow">
-              <GalaxyWrapper />
-              <div className="relative z-10 px-6 py-25 md:p-10 lg:p-16 xl:p-20 2xl:p-24">
+            <main className="relative z-10 flex-grow">
+              <div className="px-6 pt-28 pb-16 sm:px-8 md:px-10 md:pt-32 lg:px-16">
                 {children}
               </div>
             </main>

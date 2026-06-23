@@ -20,39 +20,27 @@ export default function TabSelector({
   onChangeAction,
   variant = "professional",
 }: TabSelectorProps) {
-  const colors = {
-    professional: {
-      active: "from-blue-600 to-blue-500",
-      hover: "hover:bg-blue-500/10",
-      text: "text-blue-400",
-    },
-    freelance: {
-      active: "from-amber-600 to-amber-500",
-      hover: "hover:bg-amber-500/10",
-      text: "text-amber-400",
-    },
-  };
-
-  const currentColors = colors[variant];
+  const activeClass =
+    variant === "professional" ? "bg-blue-500" : "bg-white/10";
 
   return (
-    <div className="w-full overflow-x-auto pb-2">
-      <div className="flex min-w-max gap-2 md:justify-center">
+    <div className="hide-scrollbar w-full overflow-x-auto pb-1">
+      <div className="mx-auto flex min-w-max gap-1 rounded-full border border-white/[0.08] bg-white/[0.02] p-1 md:w-fit">
         {tabs.map((tab) => (
           <button
             key={tab.id}
             onClick={() => onChangeAction(tab.id)}
-            className={`relative rounded-xl px-6 py-3 font-medium transition-all ${activeTab === tab.id ? "text-white" : "text-white/60"} ${activeTab !== tab.id ? currentColors.hover : ""} `}
+            className={`relative rounded-full px-5 py-2.5 text-sm font-medium transition-colors duration-200 ${
+              activeTab === tab.id
+                ? "text-white"
+                : "text-zinc-400 hover:text-zinc-200"
+            }`}
           >
             {activeTab === tab.id && (
               <motion.div
-                layoutId={`tab-${variant}`}
-                className={`absolute inset-0 rounded-xl bg-gradient-to-r ${currentColors.active} `}
-                transition={{
-                  type: "spring",
-                  stiffness: 500,
-                  damping: 30,
-                }}
+                layoutId="tab-pill"
+                className={`absolute inset-0 rounded-full ${activeClass}`}
+                transition={{ type: "spring", stiffness: 500, damping: 30 }}
               />
             )}
             <span className="relative z-10">{tab.label}</span>

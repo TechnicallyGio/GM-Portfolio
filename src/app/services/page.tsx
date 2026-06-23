@@ -479,9 +479,9 @@ export default function Services() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.1, duration: 0.5 }}
-            className="rounded-2xl border border-blue-500/20 bg-gradient-to-br from-blue-600/10 to-blue-900/5 p-8 backdrop-blur-xl"
+            className="rounded-2xl border border-blue-500/20 bg-blue-500/[0.04] p-8 backdrop-blur-xl"
           >
-            <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-blue-500">
+            <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-blue-500">
               <Icon icon="mdi:briefcase" className="h-7 w-7 text-white" />
             </div>
             <h3 className="mb-3 text-2xl font-bold text-white">
@@ -550,10 +550,10 @@ export default function Services() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="rounded-2xl border border-amber-500/20 bg-gradient-to-br from-amber-600/10 to-amber-900/5 p-8 backdrop-blur-xl"
+            className="rounded-2xl border border-white/10 bg-white/[0.02] p-8 backdrop-blur-xl"
           >
-            <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-r from-amber-600 to-amber-500">
-              <Icon icon="mdi:rocket-launch" className="h-7 w-7 text-white" />
+            <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl border border-white/10 bg-white/[0.06]">
+              <Icon icon="mdi:rocket-launch" className="h-7 w-7 text-zinc-200" />
             </div>
             <h3 className="mb-3 text-2xl font-bold text-white">
               For Freelance Projects
@@ -566,7 +566,7 @@ export default function Services() {
               <li className="flex items-start gap-3">
                 <Icon
                   icon="mdi:check-circle"
-                  className="mt-1 h-5 w-5 flex-shrink-0 text-amber-400"
+                  className="mt-1 h-5 w-5 flex-shrink-0 text-zinc-400"
                 />
                 <span className="text-gray-300">
                   <strong className="text-white">Startup MVPs:</strong> Rapid
@@ -576,7 +576,7 @@ export default function Services() {
               <li className="flex items-start gap-3">
                 <Icon
                   icon="mdi:check-circle"
-                  className="mt-1 h-5 w-5 flex-shrink-0 text-amber-400"
+                  className="mt-1 h-5 w-5 flex-shrink-0 text-zinc-400"
                 />
                 <span className="text-gray-300">
                   <strong className="text-white">SaaS Applications:</strong>{" "}
@@ -586,7 +586,7 @@ export default function Services() {
               <li className="flex items-start gap-3">
                 <Icon
                   icon="mdi:check-circle"
-                  className="mt-1 h-5 w-5 flex-shrink-0 text-amber-400"
+                  className="mt-1 h-5 w-5 flex-shrink-0 text-zinc-400"
                 />
                 <span className="text-gray-300">
                   <strong className="text-white">Retainer Arrangements:</strong>{" "}
@@ -596,7 +596,7 @@ export default function Services() {
               <li className="flex items-start gap-3">
                 <Icon
                   icon="mdi:check-circle"
-                  className="mt-1 h-5 w-5 flex-shrink-0 text-amber-400"
+                  className="mt-1 h-5 w-5 flex-shrink-0 text-zinc-400"
                 />
                 <span className="text-gray-300">
                   <strong className="text-white">Passion Projects:</strong>{" "}
@@ -607,7 +607,7 @@ export default function Services() {
             <div className="mt-8">
               <Link
                 href="/work"
-                className="inline-flex items-center gap-2 text-amber-400 transition-all duration-300 hover:gap-3 hover:text-amber-300"
+                className="inline-flex items-center gap-2 text-zinc-300 transition-all duration-300 hover:gap-3 hover:text-white"
               >
                 View Freelance Projects
                 <Icon icon="mdi:arrow-right" className="h-5 w-5" />
@@ -623,29 +623,30 @@ export default function Services() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="rounded-3xl border border-white/10 bg-gradient-to-br from-blue-600/20 to-purple-600/20 p-12 text-center backdrop-blur-xl md:p-16"
+          className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02] p-12 text-center backdrop-blur-xl md:p-16"
         >
-          <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl lg:text-5xl">
+          <div className="absolute top-[-6rem] left-1/2 -z-10 h-64 w-64 -translate-x-1/2 rounded-full bg-blue-500/10 blur-3xl" />
+          <h2 className="mb-4 text-3xl font-semibold tracking-tight text-white md:text-4xl lg:text-5xl">
             Let&apos;s Discuss Your Project
           </h2>
-          <p className="mx-auto mb-8 max-w-2xl text-lg text-gray-200 md:text-xl">
+          <p className="mx-auto mb-8 max-w-2xl text-lg text-zinc-400 md:text-xl">
             Ready to get started? Schedule a consultation to discuss your needs
             and explore how I can help bring your vision to life.
           </p>
-          <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
+          <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-blue-500 px-10 py-5 text-xl font-semibold text-white shadow-lg shadow-blue-500/30 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/40"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-blue-500 px-7 py-3.5 text-base font-medium text-white transition-colors duration-200 hover:bg-blue-400"
             >
               Get in Touch
-              <Icon icon="mdi:message-outline" className="h-6 w-6" />
+              <Icon icon="mdi:message-outline" className="h-5 w-5" />
             </Link>
             <Link
               href="/work"
-              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-blue-500/50 bg-white/5 px-10 py-5 text-xl font-semibold text-white backdrop-blur-xl transition-all duration-300 hover:border-blue-500 hover:bg-white/10"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-7 py-3.5 text-base font-medium text-zinc-200 transition-colors duration-200 hover:bg-white/[0.06]"
             >
               View Case Studies
-              <Icon icon="mdi:briefcase-outline" className="h-6 w-6" />
+              <Icon icon="mdi:briefcase-outline" className="h-5 w-5" />
             </Link>
           </div>
         </motion.div>

@@ -76,12 +76,11 @@ export default function About() {
               <strong className="text-blue-300">
                 dual professional practice
               </strong>
-              : by day, I deliver enterprise-grade solutions for established
-              clients—from e-commerce platforms with Stripe and Zoho
-              integrations to custom business systems. By night, I take on
-              selective freelance projects, building MVPs for startups and
-              passion projects in industries that excite me, like aviation
-              technology and creative applications.
+              , serving established clients with enterprise-grade solutions
+              while also pursuing selective freelance projects and
+              passion-driven startups. This balance allows me to stay at the
+              forefront of technology while delivering real-world business
+              value.
             </motion.p>
 
             <motion.p
@@ -173,10 +172,10 @@ export default function About() {
             className="rounded-xl border border-white/10 bg-gradient-to-br from-white/5 to-white/0 p-6 backdrop-blur-xl sm:rounded-2xl sm:p-8"
           >
             <div className="mb-4 flex items-center gap-3 sm:mb-6">
-              <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-purple-500/20 sm:h-12 sm:w-12">
+              <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[0.05] sm:h-12 sm:w-12">
                 <Icon
                   icon="mdi:briefcase"
-                  className="h-5 w-5 text-purple-400 sm:h-6 sm:w-6"
+                  className="h-5 w-5 text-zinc-300 sm:h-6 sm:w-6"
                 />
               </div>
               <h3 className="text-xl font-bold text-white sm:text-2xl">
@@ -194,7 +193,7 @@ export default function About() {
                 >
                   <Icon
                     icon={skill.icon}
-                    className="h-5 w-5 text-purple-400 sm:h-6 sm:w-6"
+                    className="h-5 w-5 text-zinc-400 sm:h-6 sm:w-6"
                   />
                   <span className="text-sm text-gray-200 sm:text-base">
                     {skill.name}
@@ -212,7 +211,7 @@ export default function About() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="rounded-2xl border border-white/10 bg-gradient-to-br from-blue-600/10 to-purple-600/10 p-6 backdrop-blur-xl sm:rounded-3xl sm:p-8 md:p-12"
+          className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 backdrop-blur-xl sm:rounded-3xl sm:p-8 md:p-12"
         >
           <div className="mb-3 flex justify-center sm:mb-4">
             <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-500/20 sm:h-16 sm:w-16">
@@ -348,29 +347,30 @@ export default function About() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.6 }}
-          className="rounded-2xl border border-white/10 bg-gradient-to-br from-blue-600/20 to-purple-600/20 p-6 text-center backdrop-blur-xl sm:rounded-3xl sm:p-8 md:p-12"
+          className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] p-6 text-center backdrop-blur-xl sm:rounded-3xl sm:p-8 md:p-12"
         >
-          <h2 className="mb-3 text-2xl font-bold text-white sm:mb-4 sm:text-3xl md:text-4xl">
+          <div className="absolute top-[-6rem] left-1/2 -z-10 h-64 w-64 -translate-x-1/2 rounded-full bg-blue-500/10 blur-3xl" />
+          <h2 className="mb-3 text-2xl font-semibold tracking-tight text-white sm:mb-4 sm:text-3xl md:text-4xl">
             Let&apos;s Work Together
           </h2>
-          <p className="mx-auto mb-6 max-w-2xl text-sm text-gray-200 sm:mb-8 sm:text-base md:text-lg">
+          <p className="mx-auto mb-6 max-w-2xl text-sm text-zinc-400 sm:mb-8 sm:text-base md:text-lg">
             Interested in collaborating? I&apos;m always open to discussing new
             projects and opportunities.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row sm:justify-center sm:gap-4">
             <a
               href="/contact"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-blue-500 px-6 py-3 text-base font-semibold text-white shadow-lg shadow-blue-500/30 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/40 sm:w-auto sm:px-8 sm:py-4 sm:text-lg"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-blue-500 px-6 py-3 text-sm font-medium text-white transition-colors duration-200 hover:bg-blue-400 sm:w-auto"
             >
               Get in Touch
-              <Icon icon="mdi:message-outline" className="h-5 w-5" />
+              <Icon icon="mdi:message-outline" className="h-4 w-4" />
             </a>
             <a
               href="/work"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-blue-500/50 bg-white/5 px-6 py-3 text-base font-semibold text-white backdrop-blur-xl transition-all duration-300 hover:border-blue-500 hover:bg-white/10 sm:w-auto sm:px-8 sm:py-4 sm:text-lg"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-6 py-3 text-sm font-medium text-zinc-200 transition-colors duration-200 hover:bg-white/[0.06] sm:w-auto"
             >
               View My Work
-              <Icon icon="mdi:briefcase-outline" className="h-5 w-5" />
+              <Icon icon="mdi:briefcase-outline" className="h-4 w-4" />
             </a>
           </div>
         </motion.div>

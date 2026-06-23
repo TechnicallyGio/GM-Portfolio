@@ -34,26 +34,25 @@ const stats: Stat[] = [
 
 export default function StatsBar() {
   return (
-    <section className="relative z-10 mx-auto w-full max-w-6xl px-4 py-8 sm:px-6 sm:py-12 md:px-10 lg:px-16">
-      <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4 md:gap-6">
+    <section className="mx-auto w-full max-w-6xl py-8 sm:py-10">
+      <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
         {stats.map((stat, index) => (
           <motion.div
             key={stat.label}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1, duration: 0.5 }}
-            className="group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 p-4 text-center backdrop-blur-xl transition-all duration-300 hover:border-blue-500/50 hover:bg-white/10 sm:p-6"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.06, duration: 0.4 }}
+            className="group rounded-2xl border border-white/[0.08] bg-white/[0.02] p-5 text-center transition-colors duration-200 hover:border-white/15 hover:bg-white/[0.04] sm:p-6"
           >
-            <div className="mb-2 flex justify-center sm:mb-3">
-              <Icon
-                icon={stat.icon}
-                className="h-6 w-6 text-blue-400 transition-transform duration-300 group-hover:scale-110 sm:h-8 sm:w-8"
-              />
-            </div>
-            <div className="mb-1 text-xl font-bold text-white sm:text-2xl md:text-3xl">
+            <Icon
+              icon={stat.icon}
+              className="mx-auto mb-3 h-6 w-6 text-blue-400 sm:h-7 sm:w-7"
+            />
+            <div className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
               {stat.value}
             </div>
-            <div className="text-xs font-medium text-gray-300 sm:text-sm md:text-base">
+            <div className="mt-1 text-xs text-zinc-400 sm:text-sm">
               {stat.label}
             </div>
           </motion.div>
